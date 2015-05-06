@@ -6,15 +6,15 @@
 
 /** static method for new person to get a unque UUID */
 static NSString *generateUUID() {
-	NSString *result = nil;
-	
-	CFUUIDRef uuid = CFUUIDCreate(NULL);
-	if (uuid) {
-		result = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
-		CFRelease(uuid);
-	}
-	
-	return result;
+  NSString *result = nil;
+  
+  CFUUIDRef uuid = CFUUIDCreate(NULL);
+  if (uuid) {
+    result = (__bridge_transfer NSString *)CFUUIDCreateString(NULL, uuid);
+    CFRelease(uuid);
+  }
+  
+  return result;
 }
 
 @interface Person()
@@ -24,20 +24,20 @@ static NSString *generateUUID() {
 @implementation Person
 
 - (instancetype)init {
-	return [self initWithName:nil];
+  return [self initWithName:nil];
 }
 
 - (instancetype)initWithName:(NSString *)name {
-	self = [super init];
-	if (self) {
-		_name = name;
-		_identity = generateUUID();
-	}
-	return self;
+  self = [super init];
+  if (self) {
+    _name = name;
+    _identity = generateUUID();
+  }
+  return self;
 }
 
 - (NSString *)description{
-	return [NSString stringWithFormat:@"name: %@[%@]", self.name, self.identity];
+  return [NSString stringWithFormat:@"name: %@[%@]", self.name, self.identity];
 }
 
 @end

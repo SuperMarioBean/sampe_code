@@ -13,14 +13,14 @@
 @implementation Person (Clone)
 
 - (instancetype)initWithName:(NSString *)name identity:(NSString *)identity {
-	Person *person = [self initWithName:name];
-	person.identity = identity;
-	return person;
+  Person *person = [self initWithName:name];
+  person.identity = identity;
+  return person;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-	return [[[self class] alloc] initWithName:self.name 
-									  identity:self.identity];
+  return [[[self class] alloc] initWithName:self.name 
+                                   identity:self.identity];
 }
 
 @end

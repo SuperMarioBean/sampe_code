@@ -7,9 +7,9 @@
 @implementation Person (Capability)
 
 - (void)sayWithWords:(NSString *)words {
-	NSLog(@"%@ says \"%@\"", 
-		self.name? self.name: @"a person with no name", 
-		words? words: @"nothing");
+  NSLog(@"%@ says \"%@\"", 
+    self.name? self.name: @"a person with no name", 
+    words? words: @"nothing");
 }
 
 @end

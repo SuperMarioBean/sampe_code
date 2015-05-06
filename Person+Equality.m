@@ -7,29 +7,29 @@
 @implementation Person (Equality)
 
 - (BOOL)isEqualToPerson:(Person *)person {
-	if (!person) 
-		return NO;
-	return [self.identity isEqualToString:person.identity];
+  if (!person) 
+    return NO;
+  return [self.identity isEqualToString:person.identity];
 }
 
 - (NSUInteger)hash {
-	return self.identity.hash;
+  return self.identity.hash;
 }
 
 - (BOOL)isEqual:(id)anObject{
-	if (self == anObject) {
-		return YES;
-	}
-	
-	if ([anObject isKindOfClass:[NSString class]]){
-		return [self.identity isEqualToString:(NSString *)anObject];
-	}
-	
-	if ([anObject isKindOfClass:[Person class]]) {
-		return [self isEqualToPerson:(Person *)anObject];
-	}
-	
-	return NO;
+  if (self == anObject) {
+    return YES;
+  }
+  
+  if ([anObject isKindOfClass:[NSString class]]){
+    return [self.identity isEqualToString:(NSString *)anObject];
+  }
+  
+  if ([anObject isKindOfClass:[Person class]]) {
+    return [self isEqualToPerson:(Person *)anObject];
+  }
+  
+  return NO;
 }
 
 @end
