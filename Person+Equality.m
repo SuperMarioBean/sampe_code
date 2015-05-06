@@ -20,6 +20,10 @@
 		return YES;
 	}
 	
+	if ([anObject isKindOfClass:[NSString class]]){
+		return [self.identity isEqualToString:(NSString *)anObject];
+	}
+	
 	if ([anObject isKindOfClass:[Person class]]) {
 		return [self isEqualToPerson:(Person *)anObject];
 	}
