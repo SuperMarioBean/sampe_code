@@ -7,7 +7,8 @@
 @implementation Person (Equality)
 
 - (BOOL)isEqualToPerson:(Person *)person {
-	if (person) return NO;
+	if (!person) 
+		return NO;
 	return [self.identity isEqualToString:person.identity];
 }
 
